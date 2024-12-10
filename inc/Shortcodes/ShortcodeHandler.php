@@ -18,13 +18,13 @@ class ShortcodeHandler
             return '<p>' . __('No topics found.', 'book-manager') . '</p>';
         }
 
-        $output = '<div class="topic-cards">';
+        $output = '<div class="bm-cards">';
         foreach ($topics as $topic) {
             $url = get_term_link($topic);
             $image_url = get_term_meta($topic->term_id, 'topic_image', true);
 
             // Wrap the entire card with a link
-            $output .= "<a href='" . esc_url($url) . "' class='topic-card'>";
+            $output .= "<a href='" . esc_url($url) . "' class='bm-card topic-card'>";
 
             // Add the image if it exists
             if ($image_url) {
@@ -39,7 +39,7 @@ class ShortcodeHandler
             }
 
             // Add the topic name
-            $output .= "<div class='topic-title'>
+            $output .= "<div class='bm-title'>
                         " . esc_html($topic->name) . "
                     </div>";
 
@@ -49,8 +49,6 @@ class ShortcodeHandler
 
         return $output;
     }
-
-
 
     function render_pdf_viewer($atts)
     {

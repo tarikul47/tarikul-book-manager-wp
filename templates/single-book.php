@@ -12,7 +12,7 @@ $publisher = get_post_meta(get_the_ID(), '_publisher', true);
 $author = get_post_meta(get_the_ID(), '_author', true);
 ?>
 
-<div class="single-book-container">
+<div class="single-book-container bm-section">
     <!-- Book Title -->
     <h1 class="single-book-title"><?php the_title(); ?></h1>
 
