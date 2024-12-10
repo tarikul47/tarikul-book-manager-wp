@@ -1,0 +1,62 @@
+/* Basic styling for search bar */
+.book-search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.book-search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+}
+
+.book-search-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0073aa;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.book-search-form button:hover {
+    background-color: #005983;
+}
+
+/* Styling for book grid */
+.topic-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.book-card {
+    text-align: center;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-card:hover {
+    transform: scale(1.05);
+}
+
+.book-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.book-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
