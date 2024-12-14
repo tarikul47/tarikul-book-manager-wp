@@ -18,6 +18,9 @@ class TopicTaxonomy
         add_action('manage_topic_custom_column', [$this, 'populate_topic_image_column'], 10, 3);
         add_filter('manage_edit-topic_sortable_columns', [$this, 'sortable_columns']);
 
+        add_action('pre_get_posts', [$this, 'exclude_book_category_from_archive']);
+
+
     }
 
     public function register_taxonomy()
@@ -168,6 +171,20 @@ class TopicTaxonomy
                 '1.0.0',
                 true
             );
+        }
+    }
+
+    public function exclude_book_category_from_archive($query)
+    {
+        if (!is_admin() && $query->is_main_query() && is_post_type_archive('book')) {
+            $query->set('tax_query', [
+                [
+                    'taxonomy' => 'topic', // Replace with your taxonomy name
+                    'field' => 'slug',
+                    'terms' => 'script', // Replace with the slug of the category you want to exclude
+                    'operator' => 'NOT IN', // Exclude the category
+                ],
+            ]);
         }
     }
 
