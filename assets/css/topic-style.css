@@ -83,6 +83,37 @@ a.bm-card {
     text-align: center;
 }
 
+.single-book-container .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.nav.close,
+button.nav.close {
+    background-color: #ff9a21;
+    box-shadow: 0 5px 0 #dd7800;
+    background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="7.14547" height="26.7955" rx="2.67955" transform="matrix(0.707109 0.707104 -0.707109 0.707104 18.9473 0)" fill="white"/><rect width="7.14547" height="26.7955" rx="2.67955" transform="matrix(-0.70711 0.707104 -0.707109 -0.707104 24 18.9473)" fill="white"/></svg>');
+}
+
+a.nav,
+button.nav {
+    display: block;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition: all .1s linear;
+    margin-right: 1em;
+}
+
+.w-\[54px\] {
+    width: 54px;
+}
+
+.h-\[54px\] {
+    height: 54px;
+}
+
 /* Book Title */
 .single-book-title {
     font-size: 28px;

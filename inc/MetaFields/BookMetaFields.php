@@ -20,10 +20,15 @@ class BookMetaFields
         $pdf_url = get_post_meta($post->ID, '_pdf_url', true);
         $publisher = get_post_meta($post->ID, '_publisher', true);
         $author = get_post_meta($post->ID, '_author', true);
+        $book_shortcode = get_post_meta($post->ID, '_book_shortcode', true);
 
         // Render the fields
         echo '<label for="pdf_url">' . __('PDF URL:', 'book-manager') . '</label>';
         echo '<input type="url" name="pdf_url" id="pdf_url" value="' . esc_url($pdf_url) . '" style="width: 100%; margin-bottom: 15px;">';
+
+        echo '<label for="pdf_url">' . __('Enter Shortcode:', 'book-manager') . '</label>';
+        echo '<input type="text" name="book_shortcode" id="book_shortcode" 
+           value="' . esc_attr($book_shortcode) . '"style="width:100%;" />';
 
         echo '<label for="publisher">' . __('Publisher:', 'book-manager') . '</label>';
         echo '<input type="text" name="publisher" id="publisher" value="' . esc_attr($publisher) . '" style="width: 100%; margin-bottom: 15px;">';
@@ -37,6 +42,11 @@ class BookMetaFields
         // Save PDF URL
         if (isset($_POST['pdf_url'])) {
             update_post_meta($post_id, '_pdf_url', sanitize_text_field($_POST['pdf_url']));
+        }
+
+        // Save or update meta field
+        if (isset($_POST['book_shortcode'])) {
+            update_post_meta($post_id, '_book_shortcode', sanitize_text_field($_POST['book_shortcode']));
         }
 
         // Save Publisher
